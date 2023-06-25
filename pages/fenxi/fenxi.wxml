@@ -1,0 +1,25 @@
+<!--pages/fenxi/fenxi.wxml-->
+<view class="declare" style="width: {{widthP}};">      ————品牌授权 检索无忧————</view>
+<van-tabs active="{{ active }}" use-before-change="{{ true }}" bind:change="onChange" bind:before-change="onBeforeChange" animated swipeable sticky type="card" title-active-color=" #8bb0ff" title-inactive-color="#6149f6" color="#8149f6">
+  <van-tab title="普通模式">
+  <view class="fileContainer">
+  <image src="/static/fenxi/file.png" class="file" bindtap="CheckAndUpload"></image>
+  <view class="uploadtext">{{filename}}</view>
+  <van-button type="primary" size="large" bindtap="text">开始分析</van-button>
+  </view>
+  </van-tab>
+  <van-tab title="极速模式">
+    <view class="fileContainer">
+  <image src="/static/fenxi/file1.png" class="file" bindtap="CheckAndUpload"></image>
+  <view class="uploadtext">{{filename}}</view>
+  <van-button type="primary" size="large" bindtap="text">开始分析</van-button>
+  </view>
+  </van-tab>
+  <van-tab title="精准模式">  <view class="fileContainer">
+  <image src="/static/fenxi/file2.png" class="file" bindtap="CheckAndUpload"></image>
+  <view class="uploadtext">{{filename}}</view>
+  <van-button type="primary" size="large" bindtap="text">开始分析</van-button>
+  </view></van-tab>
+</van-tabs>
+
+

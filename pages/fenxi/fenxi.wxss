@@ -1,0 +1,36 @@
+/* pages/fenxi/fenxi.wxss */
+/* pages/fuwu/fuwu.wxss */
+.declare{
+  text-align: center;
+  background-color: rgb(91, 92, 148);
+  color: aqua;
+}
+.echarts{
+  width: 700rpx;
+  height: 800rpx;
+}
+ec-canvas{
+  width: 100%;
+  height: 100%;
+}
+.fileContainer{
+  position: flex;
+  margin: 50rpx;
+  margin-bottom: 100rpx;
+  border: 5rpx solid #251f5c;
+  border-radius: 16rpx;
+  background-color: rgb(237, 243, 232);
+}
+.file{
+  margin-left: 70rpx;
+  width:500rpx;
+  height:500rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.uploadtext{
+  font-size: large;
+  font-weight: bolder;
+  text-align: center;
+}

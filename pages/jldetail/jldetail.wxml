@@ -1,0 +1,188 @@
+<!--pages/jldetail/jldetail.wxml-->
+<view class="userInformation">
+<image src="/static/my/userIcon.jpg" class="userIcon"></image>
+<view class="nameI">{{dataI.parsing_result.basic_info.name}}</view>
+<block wx:for="{{fenxi.predicted_result.tags.basic}}">
+  <van-tag type="primary">{{item.tag}}</van-tag>
+</block>
+</view>
+<view class="userSecondI">
+<image src="/static/jianli/my.png" class="disImg"></image>
+<view class="inF">{{dataI.parsing_result.basic_info.age}}岁</view>
+<image src="/static/jianli/gongwenbao.png" class="disImg"></image>
+<view class="inF">{{dataI.parsing_result.basic_info.num_work_experience}}年</view>
+<image src="/static/jianli/shouji.png" class="disImg"></image>
+<view class="inF">{{dataI.parsing_result.contact_info.phone_number}}</view>
+<image src="/static/jianli/youxiang.png" class="disImg"></image>
+<view class="inF">{{dataI.parsing_result.contact_info.email}}</view>
+<image src="/static/jianli/xueli.png" class="disImg"></image>
+<view class="inF">{{dataI.parsing_result.basic_info.degree}}</view>
+</view>
+<van-tabs animated swipeable sticky type="card" title-active-color=" #8bb0ff" title-inactive-color="#6149f6" color="#8149f6">
+  <van-tab title="简历解析">
+    <van-collapse
+  value="{{ activeNames }}"
+  bind:change="onChange"
+  bind:open="onOpen"
+  bind:close="onClose"
+>
+<van-divider contentPosition="center" fontSize="18">原始数据</van-divider>
+  <van-collapse-item title="基本信息" name="1">
+  <block wx:for="{{ dataI.parsing_result.basic_info}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <block>
+    <van-cell title="{{index}}" value="{{info}}" size="large" />
+  </block>
+  </block>
+  </van-collapse-item>
+  <van-collapse-item title="教育背景" name="2">
+  <block wx:for="{{ dataI.parsing_result.education_experience}}" wx:for-item="sum" wx:key="indexs" wx:if="{{sum!=''}}">
+  <block wx:for="{{sum}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <van-cell title="{{index}}" value="{{info}}" size="large" />
+  </block>
+  </block>
+  </van-collapse-item>
+
+  <van-collapse-item title="工作经历" name="3">
+    <block wx:for="{{dataI.parsing_result.work_experience}}" wx:for-item="sum" wx:key="indexs" wx:if="{{sum!=''}}">
+  <block wx:for="{{sum}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <van-cell title="{{index}}" value="{{info}}" size="large" />
+  </block>
+  </block>
+  </van-collapse-item>
+  
+  <van-collapse-item title="社会经历" name="4">
+    <block wx:for="{{dataI.parsing_result.social_experience}}" wx:for-item="sum" wx:key="indexs" wx:if="{{sum!=''}}">
+  <block wx:for="{{sum}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <van-cell title="{{index}}" value="{{info}}" size="large" />
+  </block>
+  </block>
+  </van-collapse-item>
+  <van-collapse-item title="项目经历" name="5">
+    <block wx:for="{{  dataI.parsing_result.project_experience}}" wx:for-item="sum" wx:key="indexs" wx:if="{{sum!=''}}">
+  <block wx:for="{{sum}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <van-cell title="{{index}}" value="{{info}}" size="large" />
+  </block>
+  </block>
+  </van-collapse-item>
+  <van-collapse-item title="培训经历" name="6">
+    <block wx:for="{{  dataI.parsing_result.training_experience}}" wx:for-item="sum" wx:key="indexs" wx:if="{{sum!=''}}">
+  <block wx:for="{{sum}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <van-cell title="{{index}}" value="{{info}}" size="large" />
+  </block>
+  </block>
+  </van-collapse-item>
+  <van-collapse-item title="补充信息" name="7">
+    <!-- <van-grid column-num="2" border="{{ false }}">
+  <van-grid-item use-slot wx:for="{{ dataI.parsing_result.others}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <block>
+    <view>{{index}}:{{info}}</view>
+  </block>
+  </van-grid-item>
+</van-grid> -->
+<block wx:for="{{ dataI.parsing_result.others}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <block>
+    <van-cell title="{{index}}" value="{{info}}" size="large" />
+  </block>
+  </block>
+  </van-collapse-item>
+</van-collapse>
+<van-divider contentPosition="center" fontSize="18">分析数据</van-divider>
+<van-button type="primary" bind:click="onClickShow" class="clickA" color="linear-gradient(to right, #4bb0ff, #6149f6)" 
+  size="large" >点击查看原始文本</van-button>
+<van-overlay show="{{ show }}" bind:click="onClickHide">
+  <view class="block" catch:tap="noop">
+    {{dataI.parsing_result.resume_rawtext}}
+    </view>
+</van-overlay>
+  </van-tab>
+  <van-tab title="智能分析">
+    <van-divider contentPosition="center" fontSize="18">原始数据</van-divider>
+    <van-collapse accordion value="{{ activeNamesF }}" bind:change="onChangeF">
+  <van-collapse-item title="简历亮点" name="1">
+    <van-grid column-num="1" border="{{ false }}">
+  <van-grid-item use-slot wx:for="{{ fenxi.predicted_result.highlights}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <view>{{index}}:</view>
+    <block wx:for="{{info}}" wx:for-item="fo" wx:key="in">
+    <view>{{fo}}</view>
+  </block>
+  </van-grid-item>
+  <van-grid-item use-slot wx:for="{{ fenxi.predicted_result.risks}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <view>{{index}}:</view>
+    <block wx:for="{{info}}" wx:for-item="fo" wx:key="in">
+    <view>{{fo}}</view>
+  </block>
+  </van-grid-item>
+</van-grid>
+  </van-collapse-item>
+  <van-collapse-item title="候选标签" name="2">
+    <van-grid column-num="2" border="{{ false }}">
+  <van-grid-item use-slot wx:for="{{ fenxi.predicted_result.tags}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <view>{{index}}</view>
+    <block wx:for="{{info}}" wx:for-item="fo" wx:key="in">
+    <block wx:for="{{fo}}" wx:for-item="f" wx:key="i" >
+    <view>{{f}}{{i}}</view>
+    </block>
+  </block>
+  </van-grid-item>
+</van-grid>
+  </van-collapse-item>
+  <van-collapse-item title="综合能力" name="3">
+    <van-grid column-num="2" border="{{ false }}">
+  <van-grid-item use-slot wx:for="{{ fenxi.predicted_result.predicted_capability}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <block>
+    <view>{{index}}:{{info}}</view>
+  </block>
+  </van-grid-item>
+</van-grid>
+  </van-collapse-item>
+  <van-collapse-item title="背景行业" name="4">
+    <van-grid column-num="2" border="{{ false }}">
+  <van-grid-item use-slot wx:for="{{ fenxi.predicted_result.predicted_industry}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <block>
+    <view>{{index}}:{{info}}</view>
+  </block>
+  </van-grid-item>
+</van-grid>
+  </van-collapse-item>
+  <van-collapse-item title="预测职能" name="5">
+    <van-grid column-num="2" border="{{ false }}">
+  <van-grid-item use-slot wx:for="{{ fenxi.predicted_result.predicted_skills}}" wx:for-item="info" wx:key="index" wx:if="{{info!=''}}">
+    <block wx:for="{{info}}" wx:key="in">
+    <view>{{in}}{{item}}</view>
+  </block>
+  </van-grid-item>
+</van-grid>
+  </van-collapse-item>
+</van-collapse>
+<van-divider contentPosition="center" fontSize="18">分析数据</van-divider>
+  </van-tab>
+</van-tabs>
+<van-divider contentPosition="center" fontSize="18">预测工资:{{fenxi.predicted_result.predicted_salary}}每月</van-divider>
+<van-divider contentPosition="center" fontSize="18">跳槽率:{{fenxi.predicted_result.predicted_turnover}}</van-divider>
+<van-divider contentPosition="center" fontSize="18">职员稳定性</van-divider>
+<van-divider contentPosition="center" fontSize="18">平均职位停留时长{{fenxi.predicted_result.stability.average_job_function_time}}月</van-divider>
+<van-divider contentPosition="center" fontSize="18">平均行业停留时长{{fenxi.predicted_result.stability.average_industry_time}}月</van-divider>
+<van-divider contentPosition="center" fontSize="18">平均企业停留时长{{fenxi.predicted_result.stability.average_work_time}}月</van-divider>
+<van-divider contentPosition="center" fontSize="18">AI分析忠诚度:{{fenxi.predicted_result.stability.work_stability}}</van-divider>
+
+<van-divider contentPosition="center" fontSize="18">职能直方图</van-divider>
+<view class="echarts">
+<ec-canvas id="echarts" canvas-id="echarts" ec="{{ecZ}}"></ec-canvas>
+</view>
+<view class="echarts">
+<ec-canvas id="echarts" canvas-id="echarts" ec="{{ecB}}"></ec-canvas>
+</view>
+<van-divider contentPosition="center" fontSize="18">背景行业</van-divider>
+<view class="echarts">
+<ec-canvas id="echarts" canvas-id="echarts" ec="{{ecK}}"></ec-canvas>
+</view>
+<view class="echarts">
+<ec-canvas id="echarts" canvas-id="echarts" ec="{{ecE}}"></ec-canvas>
+</view>
+<van-divider contentPosition="center" fontSize="18">综合能力</van-divider>
+<view class="echarts">
+<ec-canvas id="echarts" canvas-id="echarts" ec="{{ecF}}"></ec-canvas>
+</view>
+<view class="echarts">
+<ec-canvas id="echarts" canvas-id="echarts" ec="{{ecQ}}"></ec-canvas>
+</view>

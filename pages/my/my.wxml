@@ -1,0 +1,62 @@
+<!--pages/my/my.wxml-->
+<!--pages/myindex/myindex.wxml-->
+<view class='amountBg'>
+  <view class='img'>
+    <image src="/static/my/userIcon.jpg" style='width:86px;height:86px;'></image>
+  </view>
+  <view class='account'>
+    <view class="name">Plute.</view>
+    <view class='manage_text'>普通用户</view>
+  </view>
+  <view class='set'><image src='/images/icon/set.png'></image></view>
+</view>
+<view class='contain'>
+  <view class='order'>
+    <view class='order_text'>我的订单</view>
+    <view class='cut'></view>
+    <view class='order_list'>
+    <view class='cut'></view>
+      <view class='desc'>
+        <view class="desc_img"><image src='/static/my/fukuan.png'></image></view>
+            <view>已付款</view>
+        </view>
+    <view class='desc'>
+      <view class='desc_img'><image src='/static/my/shoukuan.png'></image></view>
+          <view>已取货</view>
+      </view>
+        <view class='desc'>
+      <view class='desc_img'><image src='/static/my/wancheng.png'></image></view>
+          <view>已完成</view>
+      </view>
+    </view>
+  </view>
+  <view class='clear'></view>
+  <view class='item'>
+    <view class='icon'><image src='/static/my/dizhi.png'></image></view>
+    <view class='itemname'>
+      <view>收货地址</view>
+    </view>
+  </view>
+    <view class='hr'></view>
+   <view class='item' >
+    <view class='icon'><image src='/static/my/shoucang.png'></image></view>
+    <view class='itemname'>
+      <view>我的收藏</view>
+    </view>
+  </view>
+  <view class='hr'></view>
+  <view class='item'>
+    <view class='icon'><image src='/static/my/wancheng.png'></image></view>
+    <view class='itemname'>
+      <view>问题反馈</view>
+    </view>
+  </view>
+  <view class='hr'></view>
+  <view class='item'>
+    <view class='icon'><image src='/static/my/xieyi.png'></image></view>
+    <view class='itemname'>
+      <view>协议说明</view>
+    </view>
+  </view>
+</view>
+

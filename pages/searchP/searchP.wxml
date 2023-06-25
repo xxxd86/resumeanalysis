@@ -1,0 +1,54 @@
+<!--pages/searchP/searchP.wxml-->
+<van-dropdown-menu>
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+</van-dropdown-menu>
+<van-card
+  num=""
+  tag="标签"
+  price=""
+  desc="描述信息"
+  title="阿里巴巴"
+  thumb="{{ imageURL }}"
+>
+  <view slot="footer">
+    <van-button size="mini">详情</van-button>
+  </view>
+</van-card>
+<van-card
+  num=""
+  tag="标签"
+  price=""
+  desc="描述信息"
+  title="腾讯"
+  thumb="{{ imageURL }}"
+>
+  <view slot="footer">
+    <van-button size="mini">详情</van-button>
+  </view>
+</van-card>
+<van-card
+  num=""
+  tag="标签"
+  price=""
+  desc="描述信息"
+  title="小红书"
+  thumb="{{ imageURL }}"
+>
+  <view slot="footer">
+    <van-button size="mini">详情</van-button>
+  </view>
+</van-card>
+<van-card
+  num=""
+  tag="标签"
+  price=""
+  desc="描述信息"
+  title="bibil"
+  thumb="{{ imageURL }}"
+>
+  <view slot="footer">
+    <van-button size="mini">详情</van-button>
+  </view>
+</van-card>
+

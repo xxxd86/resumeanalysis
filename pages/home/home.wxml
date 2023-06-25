@@ -1,0 +1,52 @@
+<!--pages/home/home.wxml-->
+<van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:change="onChange"
+  bind:search="onSearch"
+  background="#8bb0ff"
+  shape="round"
+>
+<van-button type="primary" size="small" slot="action" bind:tap="onClick" class="search" color="linear-gradient(to right, #8bb0ff, #6149f6)">搜索</van-button>
+</van-search>
+<swiper indicator-dots="false" 
+        autoplay="{{true}}" 
+        interval="5000" 
+        indicator-dots="{{false}}" 
+        indicator-color='#8a8a8a' 
+        indicator-active-color='#333' 
+        circular="true" 
+        class="swiper-block" 
+        bindchange="swiperChange" 
+        previous-margin="100rpx" 
+        next-margin="100rpx" 
+        current="{{0}}">
+  <block wx:for="{{Adertises}}" wx:index="{{index}}" wx:key="{{index}}">
+    <swiper-item class="swiper-item ">
+      <image mode="aspectFill" src="{{item.eqIcon}}" class="slide-image {{currentIndex == index ? 'active' : 'common'}}" />
+    </swiper-item>
+  </block>
+</swiper>
+<van-grid>
+  <van-grid-item icon="/static/home/hezuo.png" text="合作" />
+  <van-grid-item icon="/static/home/kufu.png" text="客服"  url="/pages/chatC/chatC"/>
+  <van-grid-item icon="/static/home/shuzu.png" text="文档" url="/pages/wendang/wendang"/>
+  <van-grid-item icon="/static/home/xianxia.png" text="活动" />
+</van-grid>
+<view class="declare" style="width: {{widthP}};">      ————我们的优势————    </view>
+<van-circle value="{{ 60 }}" text="用户回顾" class="bili" layer-color="#fff" color="#ee0a24"/>
+<van-circle value="{{ 80 }}" text="降低成本" class="bili"/>
+<van-circle value="{{ 80 }}" text="节省支出" color="#8a8a8a" class="bili"/>
+<view class="declare" style="width: {{widthP}};">      ————我们的技术————    </view>
+<view class="tecText">采用百度AI智能扫描技术,高效且准确</view>
+<van-grid gutter="{{ 10 }}" column-num="3">
+  <van-grid-item use-slot wx:for="{{ 6 }}" wx:for-item="index">
+    <image
+      style="width: 100%; height: 90px;"
+      src="https://img.yzcdn.cn/vant/apple-{{ index + 1 }}.jpg"
+    />
+  </van-grid-item>
+</van-grid>
+
+

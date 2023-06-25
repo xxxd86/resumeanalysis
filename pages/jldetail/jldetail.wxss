@@ -1,0 +1,72 @@
+/* pages/jldetail/jldetail.wxss */
+.userIcon{
+  width:100rpx;
+  height:100rpx;
+}
+.disImg{
+  width:50rpx;
+  height:50rpx;
+}
+.inF{
+  font-size: 20rpx;
+  width:150rpx;
+  height:50rpx;
+  line-height: 50rpx;
+}
+.userInformation{
+  display: flex;
+}
+.userSecondI{
+  display: flex;
+}
+.goodI{
+  height: 120rpx;
+  position: flex;
+  margin-left: 20rpx;
+  border: 5rpx solid #251f5c;
+  border-radius: 16rpx;
+  background-color: rgb(237, 243, 232);
+}
+.nameI{
+  font-size: medium;
+  height: 50rpx;
+  font-weight: bolder;
+  color: rgb(78, 141, 125);
+   text-align: center;
+}
+.echarts{
+  width: 700rpx;
+  height: 700rpx;
+}
+ec-canvas{
+  width: 100%;
+  height: 100%;
+}
+.clickA{
+  position:fixed; 
+  bottom:0;
+  width: 750rpx;
+}
+.containers {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+.wrapper {
+  height: 100%;
+}
+
+.block {
+  width: 400rpx;
+  height: 1500rpx;
+  color: aqua;
+  background-color: rgb(145, 177, 226);
+}
+

@@ -1,0 +1,319 @@
+/* pages/home/home.wxss */
+/* pages/home/home.wxss */
+.soIMG{
+  border-radius: 100rpx;
+  background-color: #FD802B;
+  color: #2819ac;
+}
+.containIMG{
+  height: 100rpx;
+display: flex;
+/*row 横向 column 列表 */
+flex-direction: row;
+}
+.homeback{
+  background: linear-gradient(to right, #8bb0ff, pink);
+
+}
+.swiper-container {
+  height: 90px;
+}
+.item{
+  height: 100%;
+  line-height: 100px;
+  text-align: center;
+}
+.itemIMG{
+  height: 200rpx;
+  width: 500rpx;
+}
+.thumb-class{
+  display: block;
+  width: 300rpx;
+  height: 300rpx;
+}
+.title{
+  margin-left: 100rpx;
+  text-shadow: aqua;
+  font-family:Simsun;
+  color: #791568;
+  width: 370rpx;
+  font-weight: bold;
+  font-size: 30rpx;
+  background: linear-gradient(to right, rgb(20, 192, 204), pink);
+}
+.desc{
+  margin-left: 100rpx;
+  font-family: "Lucida Calligraphy", cursive, serif, sans-serif;
+  width: 370rpx;
+  color: #2819ac;
+  font-size: 50rpx;
+  background: linear-gradient(to right, rgb(159, 207, 189), rgb(91, 81, 129));
+}
+.card{
+  display: flex;
+  margin-bottom: 100rpx;
+  width: 500rpx;
+}
+.pageTwo .swiperClass {
+  margin: 0;
+  margin-top: 10px;
+}
+.outImge {
+width: 100%;
+height: 90%;
+border-radius: 10px;
+overflow: hidden;
+}
+.pageTwo .slide-image {
+  width: 100%;
+  height: 100%;
+  /* border-radius: 10px; */
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 10rpx rgba(0, 0, 0, .8)
+}
+.pageTwo image.active {
+  transform: none;
+  transition: all 0.2s ease-in 0s;
+}
+.pageTwo image.quiet {
+  transform: scale(0.8333333);
+  transition: all 0.2s ease-in 0s;
+}
+.bjt {
+  width: 100%;
+  height: 678rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.bjt image {
+  width: 100%;
+  height: 100%;
+}
+.toptit {
+  margin-left: 128rpx;
+  width: 470rpx;
+  height: 67rpx;
+}
+.toptit image {
+  width: 100%;
+  height: 100%;
+}
+.thumbnail_box {
+margin-top: 32rpx;
+  margin-left: 152rpx;
+}
+.thumbnail {
+  display: inline-block;
+}
+.thumbnail .img {
+  margin-left: 6rpx;
+  width: 105rpx;
+  height: 54rpx;
+  position: relative;
+}
+.thumbnail .img image {
+  width: 100%;
+  height: 100%;
+}
+
+.shadow{
+  width:100%;
+  height:100%;
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:998;
+  background-color:#000;
+  opacity:0.6;
+}
+.active_tum {
+  position:absolute;
+  left:0;
+  top:0;
+  width:95%;
+  height:90%;
+  border: 5rpx solid #FFFF;
+} 
+.delicious {
+  position: relative;
+  width: 100%;
+  background: #F2F2F2;
+  margin-top: 70rpx;
+  border-radius: 14rpx;
+  padding-bottom: 21rpx;
+  padding-top: 24rpx;
+}
+.topimg {
+  position: absolute;
+  left: 50%;
+  top: -40rpx;
+  transform: translateX(-50%);
+  padding: 5rpx 30rpx;
+  height: 49rpx;
+  border: 1rpx solid #040000;
+  background-color: #FD802B;
+  font-weight:bold ;
+  text-align: center;
+  line-height: 49rpx;
+  color: #FFFF;
+}
+.xiaohgengxian {
+position: absolute;
+left: 50%;
+top: 27rpx;
+transform: translateX(-50%);
+width: 100%;
+height: 11rpx;
+z-index: 9999;
+}
+.xiaohgengxian image {
+width: 100%;
+height: 100%;
+}
+.topimg .heng1{
+margin-right: 5rpx;
+}
+.topimg .heng2{
+margin-left: 5rpx;
+}
+.deliciousGoods {
+display: inline-block;
+margin-left: 3rpx;
+/* padding-top: 24rpx; */
+}
+.deliciousGoods .item  {
+width: 344rpx;
+height: 500rpx;
+background: #FFFFFF;
+border-radius: 13rpx;
+background: #FFFFFF;
+border-radius: 13rpx;
+display: inline-block;
+margin-left: 19rpx;
+margin-top: 16rpx;
+overflow: hidden;
+box-sizing: border-box;
+}
+.deliciousGoods .item  .tpimg {
+width: 344rpx;
+height: 317rpx;
+}
+.deliciousGoods .item  .tpimg image {
+width: 100%;
+height: 100%;
+}
+.deliciousGoods .item  .bottom .title {
+font-size: 26rpx;
+height: 70rpx;
+font-weight: 500;
+color: #333333;
+margin-left: 22rpx;
+margin-top: 18rpx;
+max-width: 280rpx;
+overflow: hidden;
+display: -webkit-box;
+word-break: break-all;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+text-overflow: ellipsis;
+}
+.deliciousGoods .item  .bottom .botto {
+display: flex;
+justify-content: space-between;
+padding-left: 22rpx;
+padding-right: 15rpx;
+margin-top: 10rpx;
+}
+.deliciousGoods .item  .bottom .botto .left .price{
+font-size: 44rpx;
+font-family: Bahnschrift;
+font-weight: 400;
+color: #DE2121;
+}
+.deliciousGoods .item  .bottom .botto .left {
+font-size: 24rpx;
+font-family: Source Han Sans CN;
+font-weight: 400;
+color: #D60E03;
+height: 50rpx;
+margin-top: 12rpx;
+max-width: 220rpx;
+overflow: hidden;
+}
+page{
+  background-color: #fff;
+}
+.swiper-block {
+  background: #fff;
+  height: 500rpx;
+  width: 100%;
+}
+
+.swiper-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  overflow: unset;
+  width: 550rpx;
+  height: 450rpx;
+  padding-top: 70rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.slide-image{
+  height: 300rpx;
+  width: 450rpx;
+  border-radius: 10rpx;
+  margin: 0rpx 50rpx ;
+  z-index: 1;
+  box-shadow: 10rpx 5px 40rpx rgba(0, 0, 0,0.5);
+}
+.active{
+  transform: scale(1.3);
+  transition: all .5s ease-in 0s;
+  z-index: 20;
+  opacity: 1;
+}
+.common{
+  transform: scale(1);
+  transition: all .5s ease-in 0s;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.dots-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dots{
+  width: 30rpx;
+  height: 6rpx;
+  margin: 0 4rpx;
+  background-color: #aaa;
+  margin-top: -80rpx;
+}
+.bg-333{
+  background-color: #333;
+}
+.declare{
+  background-color: rgb(91, 92, 148);
+  color: aqua;
+  text-align: center;
+}
+.bili{
+  margin-right: 10rpx;
+}
+.tecText{
+  color: rgb(51, 155, 120);
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+}
